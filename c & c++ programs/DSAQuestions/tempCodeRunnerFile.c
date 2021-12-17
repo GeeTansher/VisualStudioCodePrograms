@@ -1,0 +1,4 @@
+
+        // {
+        //     insert(&(*(root)->right),num);
+        // }
