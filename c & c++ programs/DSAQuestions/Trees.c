@@ -44,31 +44,6 @@ void postorder(tree *root)
         return;
 }
 
-// tree* insert(tree *root,int num)
-// {
-//     tree *p;
-//     p=(tree*)malloc(sizeof(struct Tree));
-//     p->data=num;
-//     if(root==NULL)
-//     {
-//         root=p;
-//         root->left=NULL;
-//         root->right=NULL;
-//         return root;
-//     }
-//     else
-//     {
-//         if(p->data<root->data)
-//         {
-//             root=insert(root->left,num);
-//         }
-//         else
-//         {
-//             root=insert(root->right,num);
-//         }
-//     }
-// }
-
 int countnodes(tree *root)
 {
     int ctr = 0;
