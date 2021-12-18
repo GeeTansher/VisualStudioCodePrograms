@@ -84,7 +84,32 @@ int countLeafNodes(tree *root)
     if (root->left == NULL && root->right == NULL)
         return ctr;
     else
-        return countLeafNodes(root->left) + countLeafNodes(root->right);
+    {
+        ctr = countLeafNodes(root->left) + countLeafNodes(root->right);
+        return ctr;
+    }
+}
+
+int maxroot(tree *root)
+{
+    int max;
+    while (root != NULL && root->right != NULL)
+    {
+        root = root->right;
+    }
+    max = root->data;
+    return max;
+}
+
+int minroot(tree *root)
+{
+    int min;
+    while (root != NULL && root->left != NULL)
+    {
+        root = root->left;
+    }
+    min = root->data;
+    return min;
 }
 
 void insert(tree **root, int num)
@@ -114,27 +139,18 @@ void insert(tree **root, int num)
 int main()
 {
     int num;
-    tree *root = NULL, *temp = NULL;
-    int ctr;
+    tree *root = NULL;
+    int ctr, max, min;
     int choice, choice1;
     do
     {
-        printf("\nEnter the choice:\n1. Insert\n2. Count nodes\n3. Display\n4. Count leaf nodes\n5. Exit\n");
+        printf("\nEnter the choice:\n1. Insert\n2. Count nodes\n3. Display\n4. Count leaf nodes\n5. Maximum of tree\n6. Minimum of tree\n7. Exit\n");
         scanf("%d", &choice);
         switch (choice)
         {
         case 1:
             printf("\nEnter the value to be inserted:");
             scanf("%d", &num);
-            // if(root=NULL)
-            // {
-            //     temp=insert(root,num);
-            //     root=temp;
-            // }
-            // else
-            // {
-            //     temp=insert(root,num);
-            // }
             insert(&root, num);
             break;
         case 2:
@@ -165,6 +181,14 @@ int main()
             printf("No of nodes:%d", ctr);
             break;
         case 5:
+            max = maxroot(root);
+            printf("\nThe maximum of tree is:%d", max);
+            break;
+        case 6:
+            min = minroot(root);
+            printf("The minimum of tree is:%d", min);
+            break;
+        case 7:
             exit(0);
         default:
             printf("Wrong input...");

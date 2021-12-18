@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// addition of two polynomials implement
 typedef struct Poly
 {
     int coef;
