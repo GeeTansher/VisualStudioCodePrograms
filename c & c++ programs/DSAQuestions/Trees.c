@@ -81,6 +81,8 @@ int countnodes(tree *root)
 int countLeafNodes(tree *root)
 {
     int ctr = 1;
+    if (root == NULL)
+        return 0;
     if (root->left == NULL && root->right == NULL)
         return ctr;
     else
