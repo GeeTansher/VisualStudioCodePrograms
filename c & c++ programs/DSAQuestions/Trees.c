@@ -89,6 +89,29 @@ int minroot(tree *root)
     return min;
 }
 
+// tree *insert(tree *root, int num)
+// {
+//     /* If the tree is empty, return a new node */
+//     if (root == NULL)
+//     {
+//         tree *p;
+//         p = (tree *)malloc(sizeof(struct Tree));
+//         p->data = num;
+//         p->left = NULL;
+//         p->right = NULL;
+//         return p;
+// if any occur in this sp either make a new func for the lines of code in this if or declare p above.
+//     }
+
+//     /* Otherwise, recur down the tree */
+//     if (num < root->data)
+//         root->left = insert(root->left, num);
+//     else
+//         root->right = insert(root->right, num);
+
+//     return root;
+// }
+
 void insert(tree **root, int num)
 {
     tree *p;
@@ -113,6 +136,47 @@ void insert(tree **root, int num)
     }
 }
 
+tree* minnode(tree *root)
+{
+    while (root != NULL && root->left != NULL)
+    {
+        root = root->left;
+    }
+    return root;
+}
+
+tree* delete (tree *root, int num)
+{
+    if (root = NULL)
+    {
+        return root;
+    }
+
+    if (root->data > num)
+        root->left = delete (root->left, num);
+    else if (root->data < num)
+        root->right = delete (root->right, num);
+    else
+    {
+        if (root->left == NULL)
+        {
+            tree *p = root->right;
+            free(root);
+            return p;
+        }
+        else if (root->right == NULL)
+        {
+            tree *p = root->left;
+            free(root);
+            return p;
+        }
+        tree *p = minnode(root->right);
+        root->data = p->data;
+        root->right = delete (root->right, p->data);
+    }
+    return root;
+}
+
 int main()
 {
     int num;
@@ -121,7 +185,7 @@ int main()
     int choice, choice1;
     do
     {
-        printf("\nEnter the choice:\n1. Insert\n2. Count nodes\n3. Display\n4. Count leaf nodes\n5. Maximum of tree\n6. Minimum of tree\n7. Exit\n");
+        printf("\nEnter the choice:\n1. Insert\n2. Count nodes\n3. Display\n4. Count leaf nodes\n5. Maximum of tree\n6. Minimum of tree\n7. Delete\n8. Exit\n");
         scanf("%d", &choice);
         switch (choice)
         {
@@ -166,6 +230,11 @@ int main()
             printf("The minimum of tree is:%d", min);
             break;
         case 7:
+            printf("Enter the value you want to delete:");
+            scanf("%d", &num);
+            root = delete (root, num);
+            break;
+        case 8:
             exit(0);
         default:
             printf("Wrong input...");
