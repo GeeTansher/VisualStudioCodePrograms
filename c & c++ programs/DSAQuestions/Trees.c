@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// func for deleting (Double Pointer) is wrong check
+
 typedef struct Tree
 {
     struct Tree *left;
@@ -24,9 +26,9 @@ void inorder(tree *root)
 {
     if (root != NULL)
     {
-        preorder(root->left);
+        inorder(root->left);
         printf("%d  ", root->data);
-        preorder(root->right);
+        inorder(root->right);
     }
     else
         return;
@@ -36,8 +38,8 @@ void postorder(tree *root)
 {
     if (root != NULL)
     {
-        preorder(root->left);
-        preorder(root->right);
+        postorder(root->left);
+        postorder(root->right);
         printf("%d  ", root->data);
     }
     else
@@ -145,73 +147,66 @@ tree* minnode(tree *root)
     return root;
 }
 
-void delete (tree **root, int num)
-{
-    printf("Hi10");
-    if (*root = NULL)
-    {
-        printf("Hi2");
-        return;
-        
-    }
-    printf("Hi11");
-    if ((*root)->data > num)
-        {delete (&(*root)->left, num);printf("Hi3");}
-    else if ((*root)->data < num)
-        {delete (&(*root)->right, num);printf("Hi4");}
-    else
-    {
-        if ((*root)->left == NULL)
-        {
-            *root = (*root)->right;
-            free((*root)->right);
-            printf("Hi5");
-        }
-        else if ((*root)->right == NULL)
-        {
-            *root= (*root)->left;
-            free((*root)->left);
-            printf("Hi6");
-        }
-        tree *p = minnode((*root)->right);
-        (*root)->data = p->data;
-        printf("Hi7");
-        delete (&(*root)->right, p->data);
-    }
-    printf("Hi8");
-}
-
-// tree* delete (tree *root, int num)
+// void delete (tree **root, int num)
 // {
-//     if (root = NULL)
+//     if (*root == NULL)
 //     {
-//         return root;
+//         return;
+        
 //     }
-
-//     if (root->data > num)
-//         root->left = delete (root->left, num);
-//     else if (root->data < num)
-//         root->right = delete (root->right, num);
+//     if ((*root)->data > num)
+//         {delete (&(*root)->left, num);}
+//     else if ((*root)->data < num)
+//         {delete (&(*root)->right, num);}
 //     else
 //     {
-//         if (root->left == NULL)
+//         if ((*root)->left == NULL)
 //         {
-//             tree *p = root->right;
-//             free(root);
-//             return p;
+//             *root = (*root)->right;
+//             free((*root)->right);
 //         }
-//         else if (root->right == NULL)
+//         else if ((*root)->right == NULL)
 //         {
-//             tree *p = root->left;
-//             free(root);
-//             return p;
+//             *root= (*root)->left;
+//             free((*root)->left);
 //         }
-//         tree *p = minnode(root->right);
-//         root->data = p->data;
-//         root->right = delete (root->right, p->data);
+//         tree *p = minnode((*root)->right);
+//         (*root)->data = p->data;
+//         delete (&(*root)->right, p->data);
 //     }
-//     return root;
 // }
+
+tree* delete (tree *root, int num)
+{
+    if (root == NULL)
+    {
+        return root;
+    }
+
+    if (root->data > num)
+        root->left = delete (root->left, num);
+    else if (root->data < num)
+        root->right = delete (root->right, num);
+    else
+    {
+        if (root->left == NULL)
+        {
+            tree *p = root->right;
+            free(root);
+            return p;
+        }
+        else if (root->right == NULL)
+        {
+            tree *p = root->left;
+            free(root);
+            return p;
+        }
+        tree *p = minnode(root->right);
+        root->data = p->data;
+        root->right = delete (root->right, p->data);
+    }
+    return root;
+}
 
 int main()
 {
@@ -268,10 +263,8 @@ int main()
         case 7:
             printf("Enter the value you want to delete:");
             scanf("%d", &num);
-            // root = delete (root, num);
-            printf("Hi9");
-            delete(&root,num);
-            printf("Hi1");
+            root = delete (root, num);
+            // delete(&root,num);
             break;
         case 8:
             exit(0);
