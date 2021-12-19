@@ -219,8 +219,11 @@ int main()
             break;
         case 2:
             split(first, &odd, &even);
+            printf("Original List:");
             display(first);
+            printf("Odd elements List:");
             display(odd);
+            printf("Even elements List:");
             display(even);
             break;
         case 3:
