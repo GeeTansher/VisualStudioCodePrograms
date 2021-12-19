@@ -107,23 +107,23 @@ node *insert(node *a, int num, int choice1)
     }
 }
 
-void split(node **first, node **odd, node **even)
+void split(node *first, node **odd, node **even)
 {
     int count = 0;
     node *p = NULL, *q = NULL, *r = NULL, *s = NULL;
-    if ((*first) == NULL)
+    if (first == NULL)
     {
         printf("\n nothing to split!!");
     }
     else
     {
-        while ((*first) != NULL)
+        while (first != NULL)
         {
             count++;
             if (count % 2 != 0)
             {
                 p = (node *)malloc(sizeof(node));
-                p->data = (*first)->data;
+                p->data = first->data;
                 p->next = NULL;
                 if ((*odd) == NULL)
                 {
@@ -139,7 +139,7 @@ void split(node **first, node **odd, node **even)
             else
             {
                 r = (node *)malloc(sizeof(node));
-                r->data = (*first)->data;
+                r->data = first->data;
                 r->next = NULL;
                 if ((*even) == NULL)
                 {
@@ -153,7 +153,7 @@ void split(node **first, node **odd, node **even)
                 }
             }
 
-            (*first) = (*first)->next;
+            first = first->next;
         }
     }
 }
@@ -218,8 +218,7 @@ int main()
             }
             break;
         case 2:
-            p = first;
-            split(&p, &odd, &even);
+            split(first, &odd, &even);
             display(first);
             display(odd);
             display(even);
