@@ -89,6 +89,14 @@ node *insert(node *a, int num, int choice1)
             {
                 printf("There can be no element added at this position.");
             }
+            else if (q == a)
+            {
+                q = insert(q, num, 1);
+            }
+            else if (a == NULL)
+            {
+                q = insert(a, num, 2);
+            }
             else
             {
                 p->next = a->next;
@@ -98,7 +106,6 @@ node *insert(node *a, int num, int choice1)
         }
     }
 }
-
 
 void split(node **first, node **odd, node **even)
 {
@@ -196,10 +203,16 @@ int main()
                 }
                 break;
             case 3:
+                p = first;
                 first = insert(first, num, choice1);
                 if (last == NULL)
                 {
                     last = first;
+                }
+                if (first->next != NULL && first == last)
+                {
+                    last = first;
+                    first = p;
                 }
                 break;
             }
