@@ -93,41 +93,37 @@ int minroot(tree *root)
 
 // tree *insert(tree *root, int num)
 // {
-//     /* If the tree is empty, return a new node */
 //     if (root == NULL)
 //     {
 //         tree *p;
-//         p = (tree *)malloc(sizeof(struct Tree));
+//         p = (tree *)malloc(sizeof(tree));
 //         p->data = num;
 //         p->left = NULL;
 //         p->right = NULL;
 //         return p;
-// if any occur in this sp either make a new func for the lines of code in this if or declare p above.
 //     }
 
-//     /* Otherwise, recur down the tree */
 //     if (num < root->data)
 //         root->left = insert(root->left, num);
 //     else
 //         root->right = insert(root->right, num);
-
 //     return root;
 // }
 
 void insert(tree **root, int num)
 {
-    tree *p;
-    p = (tree *)malloc(sizeof(struct Tree));
-    p->data = num;
     if (*root == NULL)
     {
+        tree *p;
+        p = (tree *)malloc(sizeof(struct Tree));
+        p->data = num;
         p->left = NULL;
         p->right = NULL;
         *root = p;
     }
     else
     {
-        if (p->data > (*root)->data)
+        if (num > (*root)->data)
         {
             insert(&((*root)->right), num);
         }
@@ -138,7 +134,7 @@ void insert(tree **root, int num)
     }
 }
 
-tree* minnode(tree *root)
+tree *minnode(tree *root)
 {
     while (root != NULL && root->left != NULL)
     {
@@ -152,7 +148,6 @@ tree* minnode(tree *root)
 //     if (*root == NULL)
 //     {
 //         return;
-        
 //     }
 //     if ((*root)->data > num)
 //         {delete (&(*root)->left, num);}
@@ -176,7 +171,7 @@ tree* minnode(tree *root)
 //     }
 // }
 
-tree* delete (tree *root, int num)
+tree *delete (tree *root, int num)
 {
     if (root == NULL)
     {
@@ -253,12 +248,22 @@ int main()
             printf("No of nodes:%d", ctr);
             break;
         case 5:
-            max = maxroot(root);
-            printf("\nThe maximum of tree is:%d", max);
+            if (root == NULL)
+                printf("No maximum is there.");
+            else
+            {
+                max = maxroot(root);
+                printf("\nThe maximum of tree is:%d", max);
+            }
             break;
         case 6:
-            min = minroot(root);
-            printf("The minimum of tree is:%d", min);
+            if (root == NULL)
+                printf("No minimum is there.");
+            else
+            {
+                min = minroot(root);
+                printf("\nThe minimum of tree is:%d", min);
+            }
             break;
         case 7:
             printf("Enter the value you want to delete:");
