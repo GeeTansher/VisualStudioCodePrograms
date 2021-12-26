@@ -89,14 +89,6 @@ node *insert(node *a, int num, int choice1)
             {
                 printf("There can be no element added at this position.");
             }
-            else if (q == a)
-            {
-                q = insert(q, num, 1);
-            }
-            else if (a == NULL)
-            {
-                q = insert(a, num, 2);
-            }
             else
             {
                 p->next = a->next;
@@ -107,23 +99,24 @@ node *insert(node *a, int num, int choice1)
     }
 }
 
-void split(node *first, node **odd, node **even)
+
+void split(node **first, node **odd, node **even)
 {
     int count = 0;
     node *p = NULL, *q = NULL, *r = NULL, *s = NULL;
-    if (first == NULL)
+    if ((*first) == NULL)
     {
         printf("\n nothing to split!!");
     }
     else
     {
-        while (first != NULL)
+        while ((*first) != NULL)
         {
             count++;
             if (count % 2 != 0)
             {
                 p = (node *)malloc(sizeof(node));
-                p->data = first->data;
+                p->data = (*first)->data;
                 p->next = NULL;
                 if ((*odd) == NULL)
                 {
@@ -139,7 +132,7 @@ void split(node *first, node **odd, node **even)
             else
             {
                 r = (node *)malloc(sizeof(node));
-                r->data = first->data;
+                r->data = (*first)->data;
                 r->next = NULL;
                 if ((*even) == NULL)
                 {
@@ -153,7 +146,7 @@ void split(node *first, node **odd, node **even)
                 }
             }
 
-            first = first->next;
+            (*first) = (*first)->next;
         }
     }
 }
@@ -203,27 +196,19 @@ int main()
                 }
                 break;
             case 3:
-                p = first;
                 first = insert(first, num, choice1);
                 if (last == NULL)
                 {
                     last = first;
                 }
-                if (first->next != NULL && first == last)
-                {
-                    last = first;
-                    first = p;
-                }
                 break;
             }
             break;
         case 2:
-            split(first, &odd, &even);
-            printf("Original List:");
+            p = first;
+            split(&p, &odd, &even);
             display(first);
-            printf("Odd elements List:");
             display(odd);
-            printf("Even elements List:");
             display(even);
             break;
         case 3:
