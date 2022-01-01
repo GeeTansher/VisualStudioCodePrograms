@@ -365,12 +365,12 @@ class Stack
     {
         if(top==-1)
         {
-            cout<<endl<<"Stack is empty, no element to be poped.";
+            cout<<endl<<"Stack is empty, no element to be pop.";
             cin.get();cin.get();
             return;
         }
         top--;
-        cout<<endl<<"Poped";
+        cout<<endl<<"Pop";
         cin.get();cin.get();
     }
 
@@ -445,13 +445,13 @@ class Stack
     {
         if(top1==NULL)
         {
-            cout<<endl<<"Stack is empty, no element to be poped.";
+            cout<<endl<<"Stack is empty, no element to be pop.";
             cin.get();cin.get();
             return;
         }
         snode *p=top1;
         top1=top1->next;
-        cout<<endl<<p->data<<" Poped successfully.";
+        cout<<endl<<p->data<<" Pop successfully.";
         delete p;
         d_n--;
         cin.get();cin.get();
@@ -1034,7 +1034,7 @@ int main()
         g:
 
         system("cls");
-        cout<<"......Welcome to the All Data Structure and Algorithms Implementtion Hub......";
+        cout<<"......Welcome to the All Data Structure and Algorithms Implementation Hub......";
         cout<<endl<<"What do you want to do?";
         cout<<endl<<"1. Implementing Queue"<<endl<<"2. Implementing Stack"<<endl<<"3. Implementing Linked List"<<endl<<"4. Doing some sorting"<<endl<<"5. Exit"<<endl;
 
@@ -1048,7 +1048,7 @@ int main()
             system("cls");
             cout<<".......QUEUE HUB.........";
             cout<<endl<<"What do you want to do?";
-            cout<<endl<<"1. Static Queue Implementation"<<endl<<"2. Dyanamic Queue Implementation"<<endl<<"3. Circular Queue Implementation"<<endl<<"4. Go Back"<<endl;
+            cout<<endl<<"1. Static Queue Implementation"<<endl<<"2. Dynamic Queue Implementation"<<endl<<"3. Circular Queue Implementation"<<endl<<"4. Go Back"<<endl;
     
             cin>>choice2;
 
@@ -1165,7 +1165,7 @@ int main()
             system("cls");
             cout<<".......STACK HUB.........";
             cout<<endl<<"What do you want to do?";
-            cout<<endl<<"1. Static Stack Implementation"<<endl<<"2. Dyanamic Stack Implementation"<<endl<<"3. Go Back"<<endl;
+            cout<<endl<<"1. Static Stack Implementation"<<endl<<"2. Dynamic Stack Implementation"<<endl<<"3. Go Back"<<endl;
     
             cin>>choice2;
 
