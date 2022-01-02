@@ -11,7 +11,7 @@ typedef struct node
 nodetype *insert(nodetype *r)
 {
     int num;
-    nodetype *p = NULL,*q=NULL;
+    nodetype *p = NULL, *q = NULL;
     printf("\nEnter the number you want to insert:");
     scanf("%d", &num);
     p = (nodetype *)malloc(sizeof(nodetype));
@@ -27,10 +27,10 @@ nodetype *insert(nodetype *r)
         }
         else
         {
-            q=r;
+            q = r;
             r->next = p;
             r = p;
-            r->prev=q;
+            r->prev = q;
         }
         r->next = NULL;
     }
@@ -46,7 +46,7 @@ nodetype *delete (nodetype *f)
         return f;
     }
     f = f->next;
-    f->prev=NULL;
+    f->prev = NULL;
     free(p);
     printf("\nDequeued successfully.\n");
     return f;
