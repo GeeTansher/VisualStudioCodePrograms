@@ -8,7 +8,7 @@ typedef struct node
     struct node *next;
 } nodetype;
 
-nodetype *insert(nodetype *r)
+nodetype *enqueue(nodetype *r)
 {
     int num;
     nodetype *p = NULL, *q = NULL;
@@ -37,7 +37,7 @@ nodetype *insert(nodetype *r)
     return r;
 }
 
-nodetype *delete (nodetype *f)
+nodetype *dequeue(nodetype *f)
 {
     nodetype *p = f;
     if (f == NULL)
@@ -68,17 +68,17 @@ int main()
     int choice;
     while (1)
     {
-        printf("\nEnter:\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n");
+        printf("\nEnter your choice:\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n");
         scanf("%d", &choice);
         switch (choice)
         {
         case 1:
-            r = insert(r);
+            r = enqueue(r);
             if (f == NULL)
                 f = r;
             break;
         case 2:
-            f = delete (f);
+            f = dequeue(f);
             if (f == NULL)
                 r = f;
             break;
