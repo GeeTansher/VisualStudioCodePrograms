@@ -1,52 +1,54 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct node{
+typedef struct node
+{
     struct node *prev;
     int nm;
     struct node *next;
-}nodetype;
+} nodetype;
 
-nodetype* push(nodetype *top)
+nodetype *push(nodetype *top)
 {
     int num;
     printf("\nEnter the number you want to insert:");
-    scanf("%d",&num);
-    nodetype *p=NULL;
-    p=(nodetype*)malloc(sizeof(nodetype));
-    if(p==NULL)
+    scanf("%d", &num);
+    nodetype *p = NULL;
+    p = (nodetype *)malloc(sizeof(nodetype));
+    if (p == NULL)
         printf("\nMemory is full.");
-    else{
-        p->nm=num;
-        if(top==NULL)
+    else
+    {
+        p->nm = num;
+        if (top == NULL)
         {
-            top=p;
-            top->prev=NULL;
-            top->next=NULL;
+            top = p;
+            top->prev = NULL;
+            top->next = NULL;
         }
         else
         {
-            top->prev=p;
-            p->next=top;
-            top=p;
-            top->prev=NULL;
+            top->prev = p;
+            p->next = top;
+            top = p;
+            top->prev = NULL;
         }
     }
     return top;
 }
 
-nodetype* pop(nodetype *top)
+nodetype *pop(nodetype *top)
 {
-    nodetype *p=NULL;
-    if(top==NULL)
+    nodetype *p = NULL;
+    if (top == NULL)
     {
         printf("\nNothing to pop. Stack is empty.\n");
     }
     else
     {
-        p=top;
-        top=top->next;
-        top->prev=NULL;
+        p = top;
+        top = top->next;
+        top->prev = NULL;
         free(p);
         printf("\nPop successful.\n");
     }
@@ -54,31 +56,31 @@ nodetype* pop(nodetype *top)
 }
 
 void display(nodetype *top)
+{
+    printf("The Stack is:\n");
+    while (top != NULL)
     {
-        printf("The Stack is:\n");
-        while(top!=NULL)
-        {
-            printf("%d -> ",top->nm);
-            top=top->next;
-        }
-        printf("NULL");
+        printf("%d -> ", top->nm);
+        top = top->next;
     }
+    printf("NULL");
+}
 
 int main()
 {
-    nodetype *top=NULL;
+    nodetype *top = NULL;
     int choice;
-    while(1)
+    while (1)
     {
         printf("\nEnter your choice:\n1. Push\n2. Pop\n3. Display\n4. Exit\n");
-        scanf("%d",&choice);
+        scanf("%d", &choice);
         switch (choice)
         {
         case 1:
-            top=push(top);
+            top = push(top);
             break;
         case 2:
-            top=pop(top);
+            top = pop(top);
             break;
         case 3:
             display(top);
