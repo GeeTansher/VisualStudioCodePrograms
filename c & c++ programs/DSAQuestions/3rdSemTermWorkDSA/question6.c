@@ -8,7 +8,7 @@ typedef struct Node
     struct Node *next;
 }node;
 
-node* insert(node *r)
+node* insert(node **f,node *r)
 {
     node *p=NULL,*q=NULL;
     int num;
@@ -29,7 +29,57 @@ node* insert(node *r)
         return r;
     }
     q=r;
-    // while()
+    if(q->data<=p->data)
+    {
+        q->next=p;
+        p->prev=q;
+        p->next=NULL;
+        r=p;
+        return r;
+    }
+    while(q->data>=p->data || q->prev!=NULL)
+    {
+        q=q->prev;
+    }
+    if(q->prev==NULL && q->data>=p->data)
+    {
+        q->prev=p;
+        p->next=q;
+        p->prev=NULL;
+        *f=p;
+    }
+    // else if(q->next==NULL && q->data<=p->data)
+    // {
+    //     q->next=p;
+    //     p->prev=q;
+    //     p->next=NULL;
+    //     r=p;
+    //     return r;
+    // }
+    else
+    {
+        p->prev=q;
+        p->next=q->next;
+        q->next=p;
+    }
+    return r;
+}
+
+void display(node *f,node *r)
+{
+    while (f != NULL)
+    {
+        printf("%d -> ", f->data);
+        f = f->next;
+    }
+    printf("NULL");
+    printf("\nReverse order:");
+    while(r!=NULL)
+    {
+        printf("%d -> ", r->data);
+        r = r->prev;
+    }
+    printf("NULL");
 }
 
 int main()
@@ -43,12 +93,14 @@ int main()
         switch (choice)
         {
         case 1:
-            r = insert(r);
+            r = insert(&f,r);
             if (f == NULL)
                 f = r;
+            if(r->prev!=NULL)
+                printf("\nHello:%d  %d  %d\n",f->data,(r->prev)->data,r->data);
             break;
         case 2:
-            display(f);
+            display(f,r);
             break;
         case 3:
             exit(0);
