@@ -48,7 +48,7 @@ int main()
     cin.get();
     cout<<"\nEnter your name:";
     getline(cin,name);
-    cout<<"\nEnter your income";
+    cout<<"\nEnter your income:";
     cin>>income;
     e.inputInfo(pan,name,income);
     e.taxCalc();
