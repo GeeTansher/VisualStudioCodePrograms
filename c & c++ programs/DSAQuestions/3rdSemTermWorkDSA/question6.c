@@ -28,40 +28,31 @@ node* insert(node **f,node *r)
         r->prev=NULL;
         return r;
     }
-    q=r;
-    if(q->data<=p->data)
+    q=*f;
+    if((*f)->data>=p->data)
     {
-        q->next=p;
-        p->prev=q;
+        p->next=*f;
+        p->prev=NULL;
+        (*f)->prev=p;
+        *f=p;
+        return r;
+    }
+    else if(r->data<=p->data)
+    {
+        r->next=p;
+        p->prev=r;
         p->next=NULL;
         r=p;
         return r;
     }
-    while(q->data>=p->data || q->prev!=NULL)
+    while(q->next->data<=p->data && q->next!=NULL)
     {
-        q=q->prev;
+        q=q->next;
     }
-    if(q->prev==NULL && q->data>=p->data)
-    {
-        q->prev=p;
-        p->next=q;
-        p->prev=NULL;
-        *f=p;
-    }
-    // else if(q->next==NULL && q->data<=p->data)
-    // {
-    //     q->next=p;
-    //     p->prev=q;
-    //     p->next=NULL;
-    //     r=p;
-    //     return r;
-    // }
-    else
-    {
-        p->prev=q;
-        p->next=q->next;
-        q->next=p;
-    }
+    p->next=q->next;
+    q->next->prev=p;
+    q->next=p;
+    p->prev=q;
     return r;
 }
 
@@ -69,14 +60,14 @@ void display(node *f,node *r)
 {
     while (f != NULL)
     {
-        printf("%d -> ", f->data);
+        printf("%d <-> ", f->data);
         f = f->next;
     }
     printf("NULL");
     printf("\nReverse order:");
     while(r!=NULL)
     {
-        printf("%d -> ", r->data);
+        printf("%d <-> ", r->data);
         r = r->prev;
     }
     printf("NULL");
@@ -96,8 +87,6 @@ int main()
             r = insert(&f,r);
             if (f == NULL)
                 f = r;
-            if(r->prev!=NULL)
-                printf("\nHello:%d  %d  %d\n",f->data,(r->prev)->data,r->data);
             break;
         case 2:
             display(f,r);
