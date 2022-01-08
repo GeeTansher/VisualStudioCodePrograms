@@ -115,19 +115,30 @@ tree *delete (tree *root, int num)
     return root;
 }
 
-tree *searchnode(tree *root, int num)
+void searchnode(tree *root, int num)
 {
-    if(root->data==num)
+    if (root == NULL)
     {
-
+        printf("Node not found.\n");
+        return;
     }
-    else if (num < root->data)
+    if (root->data == num)
     {
-        root->left = searchnode (root->left, num);
+        printf("Node found and it has no parent as it is the root node");
+        return;
+    }
+    if (root->left->data == num || root->right->data == num)
+    {
+        printf("Node found. It's parent is:%d", root->data);
+        return;
+    }
+    if (num < root->data)
+    {
+        searchnode(root->left, num);
     }
     else
     {
-        root->right = searchnode (root->right, num);
+        searchnode(root->right, num);
     }
 }
 
@@ -255,8 +266,7 @@ int main()
         case 8:
             printf("\nEnter the key to be searched:");
             scanf("%d", &num);
-            temp = searchnode(root, num);
-            printf("The root of the key searched is: %d\n", temp->data);
+            searchnode(root, num);
             break;
         case 9:
             exit(0);
