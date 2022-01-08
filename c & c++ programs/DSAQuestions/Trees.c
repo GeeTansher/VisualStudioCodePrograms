@@ -94,6 +94,33 @@ void insert(tree **root, int num)
     }
 }
 
+void searchnode(tree *root, int num)
+{
+    if (root == NULL)
+    {
+        printf("Node not found.\n");
+        return;
+    }
+    if (root->data == num)
+    {
+        printf("Node found and it has no parent as it is the root node");
+        return;
+    }
+    if (root->left != NULL && root->left->data == num || root->right != NULL && root->right->data == num)
+    {
+        printf("Node found. It's parent is:%d", root->data);
+        return;
+    }
+    if (num < root->data)
+    {
+        searchnode(root->left, num);
+    }
+    else
+    {
+        searchnode(root->right, num);
+    }
+}
+
 int minnode(tree *root)
 {
     while (root && root->left != NULL)
@@ -139,22 +166,6 @@ tree *delete (tree *root, int num)
         root->right = delete (root->right, num);
     }
     return root;
-}
-
-tree *searchnode(tree *root, int num)
-{
-    if(root->data==num)
-    {
-
-    }
-    else if (num < root->data)
-    {
-        root->left = searchnode (root->left, num);
-    }
-    else
-    {
-        root->right = searchnode (root->right, num);
-    }
 }
 
 int totalnodes(tree *root)

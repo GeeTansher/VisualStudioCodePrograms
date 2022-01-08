@@ -114,7 +114,6 @@ tree *delete (tree *root, int num)
     }
     return root;
 }
-
 void searchnode(tree *root, int num)
 {
     if (root == NULL)
@@ -127,7 +126,7 @@ void searchnode(tree *root, int num)
         printf("Node found and it has no parent as it is the root node");
         return;
     }
-    if (root->left->data == num || root->right->data == num)
+    if (root->left != NULL && root->left->data == num || root->right != NULL && root->right->data == num)
     {
         printf("Node found. It's parent is:%d", root->data);
         return;
