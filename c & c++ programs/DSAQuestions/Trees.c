@@ -94,6 +94,24 @@ void insert(tree **root, int num)
     }
 }
 
+int maxroot(tree *root)
+{
+    while (root != NULL && root->right != NULL)
+    {
+        root = root->right;
+    }
+    return root->data;
+}
+
+int minroot(tree *root)
+{
+    while (root != NULL && root->left != NULL)
+    {
+        root = root->left;
+    }
+    return root->data;
+}
+
 void searchnode(tree *root, int num)
 {
     if (root == NULL)
@@ -129,6 +147,34 @@ int minnode(tree *root)
     }
     return root->data;
 }
+
+// void delete (tree **root, int num)
+// {
+//     if (*root == NULL)
+//     {
+//         return;
+//     }
+//     if ((*root)->data > num)
+//         {delete (&(*root)->left, num);}
+//     else if ((*root)->data < num)
+//         {delete (&(*root)->right, num);}
+//     else
+//     {
+//         if ((*root)->left == NULL)
+//         {
+//             *root = (*root)->right;
+//             free((*root)->right);
+//         }
+//         else if ((*root)->right == NULL)
+//         {
+//             *root= (*root)->left;
+//             free((*root)->left);
+//         }
+//         tree *p = minnode((*root)->right);
+//         (*root)->data = p->data;
+//         delete (&(*root)->right, p->data);
+//     }
+// }
 
 tree *delete (tree *root, int num)
 {
@@ -238,7 +284,7 @@ int main()
     int choice, choice1;
     do
     {
-        printf("\nEnter the choice:\n1. Insert\n2. Display\n3. Count total nodes\n4. Count total leaf nodes\n5. Count nodes with only left child\n6. Count nodes with both child\n7. Delete node\n8. Search node and return parent\n9. Exit\n");
+        printf("\nEnter the choice:\n1. Insert\n2. Display\n3. Count total nodes\n4. Count total leaf nodes\n5. Count nodes with only left child\n6. Count nodes with both child\n7. Maximum of Tree\n8. Minimum of Tree\n9. Delete node\n10. Search node and return parent\n11. Exit\n");
         scanf("%d", &choice);
         switch (choice)
         {
@@ -285,17 +331,35 @@ int main()
             printf("Total nodes with both childs in the BST are:%d\n", num1);
             break;
         case 7:
+            if (root == NULL)
+                printf("Tree empty.");
+            else
+            {
+                num1 = maxroot(root);
+                printf("The maximum of the tree is:%d", num1);
+            }
+            break;
+        case 8:
+            if (root == NULL)
+                printf("Tree empty.");
+            else
+            {
+                num1 = minroot(root);
+                printf("The minimum of the tree is:%d", num1);
+            }
+            break;
+        case 9:
             printf("\nEnter the key to be deleted:");
             scanf("%d", &num);
             root = delete (root, num);
             printf("Node deleted.\n");
             break;
-        case 8:
+        case 10:
             printf("\nEnter the key to be searched:");
             scanf("%d", &num);
             searchnode(root, num);
             break;
-        case 9:
+        case 11:
             exit(0);
         default:
             printf("Wrong input...");
