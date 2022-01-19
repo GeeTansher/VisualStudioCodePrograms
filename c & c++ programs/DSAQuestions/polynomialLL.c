@@ -73,14 +73,7 @@ void display(poly *first)
     printf("The polynomial is: ");
     while (first != NULL)
     {
-        if (first->power == 0)
-        {
-            printf("%d + ", first->coef);
-        }
-        else
-        {
-            printf("%dx^%d + ", first->coef, first->power);
-        }
+        printf("%dx^%d + ", first->coef, first->power);
         first = first->next;
     }
     printf("0\n");
@@ -88,17 +81,18 @@ void display(poly *first)
 
 void sumpoly(poly **sumf, poly **suml, poly *first, poly *first1)
 {
-    poly *p = first, *q = first1;
+    poly *p = first;
     int s = -1, s1 = -1;
     while (p != NULL)
     {
         s++;
         p = p->next;
     }
-    while (q != NULL)
+    p = first1;
+    while (p != NULL)
     {
         s1++;
-        q = q->next;
+        p = p->next;
     }
     p = NULL;
     if (s >= s1)
