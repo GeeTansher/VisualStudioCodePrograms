@@ -22,4 +22,5 @@ int main()
             fmax=max;
     }
     cout<<fmax;
+    return 0;
 }

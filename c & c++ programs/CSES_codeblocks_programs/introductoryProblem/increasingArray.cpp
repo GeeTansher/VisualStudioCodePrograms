@@ -22,4 +22,5 @@ int main()
         }
     }
     cout<<moves;
+    return 0;
 }
