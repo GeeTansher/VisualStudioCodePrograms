@@ -1,4 +1,4 @@
-rachit #include<iostream>
+#include<iostream>
 #include<Windows.h>   // Windows-specific header file - help in talking to Windows OS
 #include<Winuser.h> 
 #include<fstream>
