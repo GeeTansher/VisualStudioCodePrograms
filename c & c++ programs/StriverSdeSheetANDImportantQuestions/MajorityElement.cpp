@@ -1,27 +1,26 @@
-// Boyer Moore Majority Algorithm
-    int majorityElement(vector<int>& nums) {
+int majorityElement(vector<int>& nums) {
         int n=nums.size();
-        int votes=0,candidate=-1;
+        int count=0,element=-1;
         for(int i=0;i<n;i++){
-            if(votes==0){
-                candidate=nums[i];
-                votes++;
+            if(count==0){
+                element=nums[i];
             }
-            else if(candidate==nums[i]){
-                votes++;
+            if(element==nums[i]){
+                count++;
             }
             else{
-                votes--;
+                count--;
             }
         }
         
-        int count=0;
+        // to cross check the answer (not necessary)
+        count=0;
         for(int i=0;i<n;i++){
-            if(nums[i]==candidate)
+            if(nums[i]==element)
                 count++;
         }
         
         if(count>n/2)
-            return candidate;
+            return element;
         return -1;
     }
