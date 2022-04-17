@@ -1,9 +1,4 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
-package com.company;
+// package com.company;
 
 import java.util.Random;
 import java.util.Scanner;

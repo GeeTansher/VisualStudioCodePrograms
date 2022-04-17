@@ -61,6 +61,13 @@
         "valarray": "cpp"
     },
     "cSpell.words": [
-        "inorder"
+        "inorder",
+        "murakami",
+        "quan"
+    ],
+    "java.project.sourcePaths": [
+        "java programs/java-start/LabQuestions/src",
+        "java programs/java-start/LabQues/src/com/company",
+        "java programs/java-start/ProgramsAll/src/com/company"
     ]
 }

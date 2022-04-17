@@ -1,4 +1,4 @@
-package com.company;
+// package com.company;
 
 import java.util.Scanner;
 class myExp extends Exception{
@@ -63,56 +63,59 @@ public class customCalculator {
     public static void main(String[] args) throws myExp, myException {
         int f,s,c=1;
         String st;
-        Scanner sc =new Scanner(System.in);
-//        name:
-        while(c!=0) {
-            System.out.println("Enter the first number:");
-            f = sc.nextInt();
-            System.out.println("Enter the second number:");
-            s = sc.nextInt();
-            if (f > 100000 || s > 100000) {
+        try (Scanner sc = new Scanner(System.in)) {
+            //        name:
+            while(c!=0) {
+                System.out.println("Enter the first number:");
+                f = sc.nextInt();
+                System.out.println("Enter the second number:");
+                s = sc.nextInt();
+                if (f > 100000 || s > 100000) {
 //                try {
-                throw new myExp();
+                    throw new myExp();
 //                } catch (Exception e) {                               // instead of these try and except statements
 //                    System.out.println("ERROR:" + e.getMessage());    // for throwing every new exception
 //                    e.printStackTrace();                              // write throws exception_name is main func declaration
 //                    System.exit(0);
 ////                break name;
 //                }
-            }
-            System.out.println("Enter the operation:\n1. +\n2. -\n3. *\n4. /");
-            st = sc.next();
-            switch (st) {
-                case "+": {
-                    add(f, s);
-                    break;
                 }
-                case "-": {
-                    subtract(f, s);
-                    break;
-                }
-                case "*": {
-                    multiply(f, s);
-                    break;
-                }
-                case "/": {
-                    divide(f, s);
-                    break;
-                }
-                default: {
+                System.out.println("Enter the operation:\n1. +\n2. -\n3. *\n4. /");
+                st = sc.next();
+                switch (st) {
+                    case "+": {
+                        add(f, s);
+                        break;
+                    }
+                    case "-": {
+                        subtract(f, s);
+                        break;
+                    }
+                    case "*": {
+                        multiply(f, s);
+                        break;
+                    }
+                    case "/": {
+                        divide(f, s);
+                        break;
+                    }
+                    default: {
 //                    try {
-                    throw new myException();
+                        throw new myException();
 //                    } catch (Exception e) {
 //                        System.out.println("Error:" + e);
 //                        e.printStackTrace();
 //                        System.exit(0);
 //                    }
 //                    break;
+                    }
                 }
-            }
 //            name:
-            System.out.println("Wanna exit the calculator(press 0):");
-            c= sc.nextInt();
+                System.out.println("Wanna exit the calculator(press 0):");
+                c= sc.nextInt();
+            }
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
         }
     }
 }
