@@ -15,16 +15,7 @@ public class wrapperClass {
             if (Character.isLetter(s.charAt(i))) {
                 alpha++;
                 switch (s.charAt(i)) {
-                    case 'a':
-                    case 'A':
-                    case 'e':
-                    case 'E':
-                    case 'i':
-                    case 'I':
-                    case 'o':
-                    case 'O':
-                    case 'u':
-                    case 'U':
+                    case 'a':case 'A':case 'e':case 'E':case 'i':case 'I':case 'o':case 'O':case 'u':case 'U':
                         v++;
                 }
             }
