@@ -23,7 +23,6 @@ public class maturityAmount {
                 System.out.println("The maturity amount is:" + A);
                 break;
             case 2:
-                // float p,r,n,A;
                 System.out.println("Enter monthly installment:");
                 p = sc.nextFloat();
                 System.out.println("Enter rate of interest:");

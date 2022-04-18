@@ -19,9 +19,8 @@ public class wrapperClass {
                         v++;
                 }
             }
-            if (Character.isWhitespace(s.charAt(i)))
-                ;
-            w++;
+            if (s.charAt(i)==32)
+                w++;
             if (s.substring(i, i + 1).matches("[^A-Za-z0-9 ]"))
                 sc++;
         }
@@ -30,7 +29,7 @@ public class wrapperClass {
                 + "\nThe no. of alphabets are:" + alpha
                 + "\nThe no. of special characters are:" + sc
                 + "\nThe no. of vowels are:" + v
-                + "\nThe no. of words are:" + (w - d - alpha - sc + 1));
+                + "\nThe no. of words are:" + (w+1));
 
         in.close();
     }
