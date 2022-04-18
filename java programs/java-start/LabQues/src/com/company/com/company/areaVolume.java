@@ -22,7 +22,7 @@ class Area {
     }
 
     public Area(double b, double h) {
-        double A = (1 / 2) * b * h;
+        double A = (1 * b * h) / 2;
         System.out.println("The area of triangle is:" + df.format(A));
     }
 }
@@ -41,12 +41,12 @@ class Volume {
     }
 
     public Volume(double radius) {
-        double V = (4 / 3) * Math.PI * radius * radius * radius;
+        double V = (4 * Math.PI * radius * radius * radius) / 3;
         System.out.println("The volume of sphere is:" + df.format(V));
     }
 
     public Volume(double r, double h) {
-        double V = (1 / 3) * Math.PI * r * r * h;
+        double V = (1 * Math.PI * r * r * h) / 3;
         System.out.println("The volume of cone is:" + df.format(V));
     }
 }
