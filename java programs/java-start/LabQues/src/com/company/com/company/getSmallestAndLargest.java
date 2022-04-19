@@ -9,7 +9,6 @@ public class getSmallestAndLargest {
             System.out.println("Enter string the k");
             s=sc.nextLine();
             k=sc.nextInt();
-            System.out.println("The smallest and largest substring of length "+k+" is:");
             getSmaAndLar(s,k);
         }       
     }
