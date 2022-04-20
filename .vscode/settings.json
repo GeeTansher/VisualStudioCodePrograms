@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
-    // "editor.fontLigatures": true,
+    "editor.fontLigatures": true,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
           {
@@ -103,5 +103,6 @@
         "java programs/java-start/LabQuestions/src",
         "java programs/java-start/LabQues/src/com/company",
         "java programs/java-start/ProgramsAll/src/com/company"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "Disabled"
 }
