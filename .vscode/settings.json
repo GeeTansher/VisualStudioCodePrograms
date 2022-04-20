@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Press Start 2P",
+    "editor.fontFamily": "Consolas",
     "editor.fontLigatures": true,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -28,7 +28,7 @@
               "constant.numeric.json"
             ],
             "settings": {
-              "fontStyle":  "'Fira Code iScript', Consolas, 'Courier New', monospace"
+              "fontStyle":  "Consolas, 'Courier New', monospace"
             }
           }
         ]
