@@ -3,5 +3,20 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch maxPalinLen",
+            "request": "launch",
+            "mainClass": "com.company.maxPalinLen",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch saddlePoint",
+            "request": "launch",
+            "mainClass": "com.company.saddlePoint",
+            "projectName": "visual code all folders_e0b196da"
+        }
+    ]
 }

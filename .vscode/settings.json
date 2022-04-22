@@ -95,9 +95,10 @@
         "valarray": "cpp"
     },
     "cSpell.words": [
-        "inorder",
-        "murakami",
-        "quan"
+      "inorder",
+      "murakami",
+      "Palin",
+      "quan"
     ],
     "java.project.sourcePaths": [
         "java programs/java-start/LabQuestions/src",
