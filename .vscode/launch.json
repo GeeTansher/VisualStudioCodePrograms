@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch alphabets",
+            "request": "launch",
+            "mainClass": "com.company.alphabets",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch PalinAndReverseMid",
+            "request": "launch",
+            "mainClass": "com.company.PalinAndReverseMid",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
             "name": "Launch maxPalinLen",
             "request": "launch",
             "mainClass": "com.company.maxPalinLen",
