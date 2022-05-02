@@ -3,6 +3,8 @@
 using namespace std;
 /*
 
+imp....make separate files for different classes and a folder containing all and include them in this program
+
 tree
 graph
 other sorting algo
