@@ -13,18 +13,6 @@ can also add searching algorithms
 can add additional operations in Linked list , Stack and Queue.
 
 */
-// struct snode
-// {
-//     int data;
-//     struct snode *next;
-// };
-
-// struct dnode
-// {
-//     int data;
-//     struct dnode *next;
-//     struct dnode *prev;
-// };
 
 struct tree
 {
