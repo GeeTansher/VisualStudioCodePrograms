@@ -1,4 +1,7 @@
 {
+
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active",
     "editor.fontFamily": "Consolas",
     "editor.fontLigatures": true,
     "editor.tokenColorCustomizations": {
