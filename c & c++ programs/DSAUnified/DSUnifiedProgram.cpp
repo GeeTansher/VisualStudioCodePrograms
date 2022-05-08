@@ -8,9 +8,9 @@
 using namespace std;
 /*
 
-tree
+Remaining functions in tree
 graph
-other sorting algo
+other sorting algos
 can also add searching algorithms
 can add additional operations in Linked list , Stack and Queue.
 
