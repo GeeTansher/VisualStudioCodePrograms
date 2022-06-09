@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch synchronizingThread",
+            "request": "launch",
+            "mainClass": "com.company.synchronizingThread",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch multithreadingExample",
+            "request": "launch",
+            "mainClass": "com.company.multithreadingExample",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
             "name": "Launch alphabets",
             "request": "launch",
             "mainClass": "com.company.alphabets",
