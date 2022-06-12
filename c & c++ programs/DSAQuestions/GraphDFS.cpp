@@ -8,23 +8,25 @@ using namespace std;
 #define vpi vector<pi>
 #define li list<int>
 #define vli vector<li>
-#define rep(i, a, b) for (int i = a; i < b; i++)
+#define for(i, a, b) for (int i = a; i < b; i++)
 #define ff first
 #define ss second
 const int N = 1e5 + 2, MOD = 1e9 + 7;
 
 vector<bool> vis;
-vli adj;
+vli adj;        // can use vvi also
 
 void dfs(int i, vector<int> &result)
 {
-    vis[i] = true;
-    result.push_back(i);
-    for (li::iterator it = adj[i].begin(); it != adj[i].end(); it++)
-    {
-        if (!vis[*it])
+    if(!vis[i]){
+        vis[i] = true;
+        result.push_back(i);
+        for (li::iterator it = adj[i].begin(); it != adj[i].end(); it++)
         {
-            dfs(*it, result);
+            if (!vis[*it])
+            {
+                dfs(*it, result);
+            }
         }
     }
 }

@@ -7,15 +7,12 @@ using namespace std;
 #define vpi vector<pi>
 #define li list<int>
 #define vli vector<li>
-#define rep(i, a, b) for (int i = a; i < b; i++)
+#define for(i, a, b) for (int i = a; i < b; i++)
 #define ff first
 #define ss second
 const int N = 1e5 + 2, MOD = 1e9 + 7;
 
-vector<bool> vis;
-vli adj;
-
-vi bfs(int s)
+vi bfs(int vector<bool>& vis,vli adj)
 {
     vi result;
     queue<int> q;
@@ -43,6 +40,8 @@ int main()
     int v, e;
     cout << "Enter no of vertices and edges:";
     cin >> v >> e;
+    vector<bool> vis;
+    vli adj;
     vis.resize(v, false);
     adj.resize(v);
     for (int i = 1; i <= e; i++)
@@ -53,7 +52,7 @@ int main()
         adj[x].push_back(y);
         adj[y].push_back(x);
     }
-    vi result = bfs(0);
+    vi result = bfs(0,vis,adj);
     for (vi::iterator it = result.begin(); it != result.end(); it++)
     {
         cout << *it << " ";
