@@ -1,26 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define vi vector<int>
-#define vvi vector<vi>
-#define pi pair<int, int>
-#define vpi vector<pi>
-#define li list<int>
-#define vli vector<li>
-#define for(i, a, b) for (int i = a; i < b; i++)
-#define ff first
-#define ss second
+// #define vi vector<int>
+// #define vvi vector<vi>
+// #define pi pair<int, int>
+// #define vpi vector<pi>
+// #define li list<int>
+// #define vli vector<li>
+// #define int a,b;
+// #define rep (i, a, b) for (int i = a; i < b; i++)
+// #define rep (j, a, b) for (int j = a; j < b; j++)
+// #define ff first
+// #define ss second
 #define I INT_MAX
-const int N = 1e5 + 2, MOD = 1e9 + 7;
+// const int N = 1e5 + 2, MOD = 1e9 + 7;
 
-void primsAlgo(vvi adj, int n, vpi &ans)
+void primsAlgo(vector<vector<int> > adj, int n, vector<pair<int, int> > &ans)
 {
-    vi near(n, I);
+    vector<int> near(n + 1, I);
     int min = I;
     int u, v;
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        for (int j = i; j < n; j++)
+        for (int j = i; j <= n; j++)
         {
             if (adj[i][j] < min)
             {
@@ -30,42 +32,68 @@ void primsAlgo(vvi adj, int n, vpi &ans)
             }
         }
     }
-    cout << min << " " << u << " " << v << " " << endl;
-    ans[0].ff = u;
-    ans[0].ss = v;
+    ans[0].first = u;
+    ans[0].second = v;
     near[u] = near[v] = 0;
 
-    rep(i, 0, n)
+    for (int i = 1; i <= n; i++)
     {
-        if (near[i] != 0 && adj[i][u] < adj[i][v])
-        {
-            // cout<<adj[i][u].ss<<" "<<adj[i][v].ss<<" "<<endl;
-            near[i] = u;
-        }
-        else
-        {
-            cout<<i<<" "<<endl;
-            near[i] = v;
+        if(near[i] != 0){
+            if (adj[i][u] < adj[i][v])
+            {
+                near[i] = u;
+            }
+            else
+            {
+                near[i] = v;
+            }
         }
     }
-    for (vi::iterator it = near.begin(); it != near.end(); it++)
+    
+    for (int i = 1; i < n - 1; i++)
     {
-        cout << *it << " ";
+        int k, min = I;
+        for (int j = 1; j <= n; j++)
+        {
+            if (near[j] != 0 && adj[j][near[j]] < min)
+            {
+                min = adj[j][near[j]];
+                k = j;
+            }
+        }
+        ans[i].first = k;
+        ans[i].second = near[k];
+        near[k] = 0;
+
+        for (int j = 1; j <= n; j++)
+        {
+            if (near[j] != 0 && adj[j][k] < adj[j][near[j]])
+            {
+                near[j] = k;
+            }
+        }
     }
 }
 
 int main()
 {
-    // vector<vector<pi> > adj;
-    vvi adj;
-    vpi ans;
+    //         {I, I, I, I, I, I, I, I},
+    //         {I, I, 25, I, I, I, 5, I},
+    //         {I, 25, I, 12, I, I, I, 10},
+    //         {I, I, 12, I, 8, I, I, I},
+    //         {I, I, I, 8, I, 16, I, 14},
+    //         {I, I, I, I, 16, I, 20, 18},
+    //         {I, 5, I, I, I, 20, I, I},
+    //         {I, I, 10, I, 14, 18, I, I}
+    vector<vector<int> > adj;
+    vector<pair<int, int> > ans;
     int v, e;
     cout << "Enter no of vertices and edges:";
     cin >> v >> e;
     // adj.resize(v);
-    adj.resize(v, vector<int>(v, I));
-    ans.resize(v - 1);
-    cout << "Please write vertices from 0 as first one...." << endl;
+    adj.resize(v + 1, vector<int>(v + 1, I));
+    ans.resize(v-1);
+    cout << "Please write vertices from 1 as first one...." << endl;
     for (int i = 0; i < e; i++)
     {
         int x, y, w;
@@ -86,13 +114,26 @@ int main()
     //     }
     //     cout << endl;
     // }
-    for(int i=0;i<v;i++){
-        for(int j=0;j<v;j++){
-            cout<<adj[i][j]<<" ";
+    for (int i = 0; i < v; i++)
+    {
+        for (int j = 0; j < v; j++)
+        {
+            if (adj[i][j] == I)
+            {
+                cout << "I ";
+            }
+            else
+            {
+                cout << adj[i][j] << " ";
+            }
         }
-        cout<<endl;
+        cout << endl;
     }
     primsAlgo(adj, v, ans);
 
+    for (int i = 0; i < v - 1; i++)
+    {
+        cout << "(" << ans[i].first << "," << ans[i].second << ")" << endl;
+    }
     return 0;
 }
