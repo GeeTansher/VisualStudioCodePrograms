@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch zigzagPattern",
+            "request": "launch",
+            "mainClass": "com.company.zigzagPattern",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch hello",
+            "request": "launch",
+            "mainClass": "hello",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch commandLineDetails",
+            "request": "launch",
+            "mainClass": "com.company.commandLineDetails",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
             "name": "Launch synchronizingThread",
             "request": "launch",
             "mainClass": "com.company.synchronizingThread",

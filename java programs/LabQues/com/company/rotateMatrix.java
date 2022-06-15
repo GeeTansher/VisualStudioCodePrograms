@@ -53,6 +53,8 @@ public class rotateMatrix {
             }
             System.out.println();
         }
+        int sum = arr[0][0] + arr[0][m - 1] + arr[m - 1][0] + arr[m - 1][m - 1];
+        System.out.println("The sum of corner elements is:" + sum);
         sc.close();
     }
 }

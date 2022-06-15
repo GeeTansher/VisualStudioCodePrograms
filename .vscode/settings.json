@@ -104,9 +104,11 @@
       "quan"
     ],
     "java.project.sourcePaths": [
-      "java programs/java-start/ProgramsAll/src/com/company",
-      "java programs/java-start/LabQues/src/com/company",
-      "java programs/java-start/LabQues"
+      "java programs\\LabQues\\src\\com\\company",
+      "java programs",
+      "java programs\\LabQues",
+      "java programs\\ProgramsAll",
+      "java programs\\tutorials"
     ],
     "C_Cpp.errorSquiggles": "Disabled",
     "editor.letterSpacing": 1.5,
