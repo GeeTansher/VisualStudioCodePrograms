@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch replace0by1",
+            "request": "launch",
+            "mainClass": "com.company.replace0by1",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch Q1_Strings",
+            "request": "launch",
+            "mainClass": "com.company.Q1_Strings",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch ScenerioStudent",
+            "request": "launch",
+            "mainClass": "com.company.ScenerioStudent",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
             "name": "Launch zigzagPattern",
             "request": "launch",
             "mainClass": "com.company.zigzagPattern",

@@ -21,11 +21,18 @@ public class alphabets {
         for (int i = 0; i < s1.length(); i++) {
             if (Character.isDigit(s1.charAt(i))) {
                 sum += Integer.parseInt(s1.substring(i, i + 1));
-                // or
-                // sum+=Integer.valueOf(s1.substring(i,i+1));
             }
         }
         System.out.println("The sum is:" + sum);
+        // or
+        // int sum = 0;
+        // char[] s = s1.toCharArray();
+        // for (int i = 0; i < s1.length(); i++) {
+        //     if (Character.isDigit(s[i])) {
+        //         sum += Integer.parseInt(String.valueOf(s[i]));
+        //     }
+        // }
+        // System.out.println("The sum is:" + sum);
     }
 
     private static void merge(String s1, String s2) {

@@ -21,7 +21,7 @@ public class wrapperClass {
             }
             if (s.charAt(i)==32)
                 w++;
-            if (s.substring(i, i + 1).matches("[^A-Za-z0-9 ]"))
+            if (s.substring(i, i + 1).matches("[^A-Za-z0-9]"))
                 sc++;
         }
 

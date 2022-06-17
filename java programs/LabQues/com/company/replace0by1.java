@@ -33,7 +33,9 @@ public class replace0by1 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number:");
         int n = sc.nextInt();
-
+        // can also use char array 
+        // char[] ch = String.valueOf(n).toCharArray();
+        // System.out.println(String.valueOf(ch));
         System.out.println("The new number is:" + convert(n));
         sc.close();
     }
