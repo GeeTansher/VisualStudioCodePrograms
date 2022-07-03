@@ -3,7 +3,7 @@ using namespace std;
 
 #define I INT_MAX
 
-void primsAlgo(vector<vector<int> > adj, int n, vector<pair<int, int> > &ans)
+void primsAlgo(vector<vector<int>> adj, int n, vector<pair<int, int>> &ans)
 {
     vector<int> near(n + 1, I);
     int min = I;
@@ -26,7 +26,8 @@ void primsAlgo(vector<vector<int> > adj, int n, vector<pair<int, int> > &ans)
 
     for (int i = 1; i <= n; i++)
     {
-        if(near[i] != 0){
+        if (near[i] != 0)
+        {
             if (adj[i][u] < adj[i][v])
             {
                 near[i] = u;
@@ -37,7 +38,7 @@ void primsAlgo(vector<vector<int> > adj, int n, vector<pair<int, int> > &ans)
             }
         }
     }
-    
+
     for (int i = 1; i < n - 1; i++)
     {
         int k, min = I;
@@ -73,14 +74,14 @@ int main()
     //         {I, I, I, I, 16, I, 20, 18},
     //         {I, 5, I, I, I, 20, I, I},
     //         {I, I, 10, I, 14, 18, I, I}
-    vector<vector<int> > adj;
-    vector<pair<int, int> > ans;
+    vector<vector<int>> adj;
+    vector<pair<int, int>> ans;
     int v, e;
     cout << "Enter no of vertices and edges:";
     cin >> v >> e;
     // adj.resize(v);
     adj.resize(v + 1, vector<int>(v + 1, I));
-    ans.resize(v-1);
+    ans.resize(v - 1);
     cout << "Please write vertices from 1 as first one...." << endl;
     for (int i = 0; i < e; i++)
     {
@@ -92,6 +93,7 @@ int main()
         adj[x][y] = w;
         adj[y][x] = w;
     }
+    cout << "Graph is:" << endl;
     for (int i = 0; i < v; i++)
     {
         for (int j = 0; j < v; j++)
@@ -108,7 +110,7 @@ int main()
         cout << endl;
     }
     primsAlgo(adj, v, ans);
-
+    cout << "Answer is:" << endl;
     for (int i = 0; i < v - 1; i++)
     {
         cout << "(" << ans[i].first << "," << ans[i].second << ")" << endl;

@@ -1,10 +1,4 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package com.company;
-
 public class Maths_class {
     public Maths_class() {
     }

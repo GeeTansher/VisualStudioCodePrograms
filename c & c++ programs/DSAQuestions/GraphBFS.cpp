@@ -12,7 +12,7 @@ using namespace std;
 #define ss second
 const int N = 1e5 + 2, MOD = 1e9 + 7;
 
-vi bfs(int vector<bool>& vis,vli adj)
+vi bfs(int s,int vector<bool>& vis,vli adj)
 {
     vi result;
     queue<int> q;
