@@ -5,13 +5,15 @@ import java.util.Scanner;
 
 public class RockPaperScissor {
     public static void main(String[] args) {
-        Random r = new Random();
         try (Scanner sc = new Scanner(System.in)) {
             String[] ar={"R","S","P"};
             System.out.println("Enter a choice from R,P,S");
             String u = sc.next();
             u=u.toUpperCase();
-            String c = ar[r.nextInt(2)];
+            // Random r = new Random();
+            // String c = ar[r.nextInt(2)];
+            // or
+            String c = ar[(int)((Math.random()*100.0D)%3)];
             if(u.equals(c))
             {
                 System.out.println("Draw");

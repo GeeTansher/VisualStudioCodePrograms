@@ -60,7 +60,7 @@ public class Strings {
         System.out.printf("You have %d computers available at store\n", 10);
         System.out.println("===== Regular expressions =====");
         System.out.println();
-        String gmailPattern = "[a-zA-Z-\\d]+@gmail\\.com";
+        String gmailPattern = "[a-zA-Z-\\d]+@gmail.com";
         Pattern p = Pattern.compile(gmailPattern);
         String sampleText = "Some random text that contains gmail addresses like this one some-email@gmail.com. And some other random text.";
         Matcher m = p.matcher(sampleText);
@@ -68,7 +68,7 @@ public class Strings {
         String gmailAddress = m.group();
         System.out.println(gmailAddress);
         String sampleText2 = "There are three sentences in this string. Are you sure? Yes!";
-        String[] sentences = sampleText2.split("[\\.!?]");
+        String[] sentences = sampleText2.split("[.!?]");
         System.out.println(Arrays.toString(sentences));
     }
 }

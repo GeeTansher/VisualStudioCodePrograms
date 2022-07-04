@@ -27,7 +27,7 @@ public class saddlePoint {
                 }
                 // now ar[i][rm] is the lowest in ith row
                 int j;
-                for(j=1;j<n;j++){
+                for(j=0;j<n;j++){
                     if(ar[j][rm]>ar[i][rm])
                     break;
                 }

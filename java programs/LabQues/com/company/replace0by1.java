@@ -32,11 +32,14 @@ public class replace0by1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number:");
-        int n = sc.nextInt();
-        // can also use char array 
-        // char[] ch = String.valueOf(n).toCharArray();
-        // System.out.println(String.valueOf(ch));
-        System.out.println("The new number is:" + convert(n));
+        String s =sc.next();
+        // String s = String.valueOf(n);
+        s=s.replaceAll("[0]","1");
+        System.out.println(s);
+        
+        // or
+        // int n = sc.nextInt();
+        // System.out.println("The new number is:" + convert(n));
         sc.close();
     }
 }

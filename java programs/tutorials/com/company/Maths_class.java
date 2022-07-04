@@ -20,5 +20,8 @@ public class Maths_class {
         System.out.println(Math.random());
         System.out.println((int)(Math.random() * 100.0D));
         System.out.println((int)(Math.random() * 100.0D) + 100);
+        System.out.println((int)((Math.random() * 100.0D)%4));
+        System.out.println((int)((Math.random() * 100.0D)%4));
+        System.out.println((int)((Math.random() * 100.0D)%4));
     }
 }

@@ -1,7 +1,83 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "Launch wrapperClass",
+            "request": "launch",
+            "mainClass": "com.company.wrapperClass",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch swingCalc",
+            "request": "launch",
+            "mainClass": "com.company.swingCalc",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.company.Main",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch check",
+            "request": "launch",
+            "mainClass": "com.company.check",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch replaceAll2ByPrimeNumbers",
+            "request": "launch",
+            "mainClass": "com.company.replaceAll2ByPrimeNumbers",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch possibleSubstringOddLength",
+            "request": "launch",
+            "mainClass": "com.company.possibleSubstringOddLength",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch RockPaperScissor",
+            "request": "launch",
+            "mainClass": "com.company.RockPaperScissor",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch Strings",
+            "request": "launch",
+            "mainClass": "com.company.Strings",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch Compare_memory_types",
+            "request": "launch",
+            "mainClass": "com.company.Compare_memory_types",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch FormatSpecifiersDemo",
+            "request": "launch",
+            "mainClass": "com.company.FormatSpecifiersDemo",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
+            "name": "Launch Maths_class",
+            "request": "launch",
+            "mainClass": "com.company.Maths_class",
+            "projectName": "visual code all folders_e0b196da"
+        },
         {
             "type": "java",
             "name": "Launch replace0by1",
