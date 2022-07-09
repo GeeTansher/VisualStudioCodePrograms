@@ -29,6 +29,6 @@ public class Compare_memory_types {
         System.out.println("arr1 == arr2: " + (arr1 == arr2));
         System.out.println("arr1.equals(arr2): " + arr1.equals(arr2));
         System.out.println("Arrays.equals(arr1, arr2): " + Arrays.equals(arr1, arr2));
-        System.out.println(arr2 == arr2);
+        // System.out.println(arr2 == arr2);
     }
 }

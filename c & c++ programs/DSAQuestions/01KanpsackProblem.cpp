@@ -4,6 +4,15 @@ using namespace std;
 bool compare(pair<int, int> a, pair<int, int> b){
     a.second < b.second;
 }
+/*
+In Dynamic Programming first implement problem by recursive approach
+Now see the variables on which the problem answer affects
+These will be the dimensions of matrix
+now implement for loop of the number of variables and implement same conditions as in recursive
+just save values in matrix 
+Thus you will get your ANSWER.
+*/
+
 
 // Recursion
 // int knapsack(vector<pair<int,int>> wt,int n,int cap){
@@ -23,11 +32,11 @@ int knapsack(vector<pair<int,int>> wt,int n,int cap){
             if(i==0 || j==0){
                 dp[i][j]=0;
             }
-            else if(wt[i-1].second<=j){
-                dp[i][j]=max(wt[i-1].first+dp[i-1][j-wt[i-1].second], dp[i-1][j]);
+            else if(wt[i-1].second>j){
+                dp[i][j]=dp[i-1][j];
             }
             else{
-                dp[i][j]=dp[i-1][j];
+                dp[i][j]=max(wt[i-1].first+dp[i-1][j-wt[i-1].second], dp[i-1][j]);
             }
         }
     }

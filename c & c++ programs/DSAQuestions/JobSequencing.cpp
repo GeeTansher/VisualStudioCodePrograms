@@ -10,7 +10,7 @@ int main()
     int n;
     cout << "Enter number of jobs:";
     cin >> n;
-    vector<string> result(n);
+    vector<string> result;
     vector<pair<string, pair<int, int>>> jobs(n);
     for (int i = 0; i < n; i++)
     {
@@ -22,6 +22,13 @@ int main()
         jobs[i].second.second = pro;
     }
     sort(jobs.begin(), jobs.end(), compare);
+    int max = -1;
+    for (int i = 0; i < n; i++)
+    {
+        if (jobs.second.first > max)
+            max = jobs.second.first;
+    }
+    result.resize(max);
     vector<bool> slot(n, true);
     for (int i = 0; i < n; i++)
     {
@@ -37,8 +44,6 @@ int main()
     }
     for (auto i : result)
     {
-        if (i == "")
-            break;
         cout << i << " -> ";
     }
     cout << " FINISHED";
