@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch RomanDecimalConversion",
+            "request": "launch",
+            "mainClass": "com.company.RomanDecimalConversion",
+            "projectName": "visual code all folders_e0b196da"
+        },
+        {
+            "type": "java",
             "name": "Launch wrapperClass",
             "request": "launch",
             "mainClass": "com.company.wrapperClass",
