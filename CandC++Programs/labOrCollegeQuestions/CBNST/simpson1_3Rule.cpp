@@ -17,6 +17,7 @@ int main()
     cin >> upper;
     cout << "Enter number of sub intervals: ";
     cin >> subInterval;
+    // intervals should be of even size
 
     /* Calculation */
 
@@ -25,6 +26,7 @@ int main()
 
     /* Finding Integration Value */
     integration = f(lower) + f(upper);
+    // integration = h/3 ((y0 + yn) + 4(y1 + y3 + y5 +...) + 2(y2 + y4 + y6 +......))
 
     for (i = 1; i <= subInterval - 1; i++)
     {

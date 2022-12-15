@@ -1,32 +1,51 @@
 #include <iostream>
+#include <math.h>
+
+/* Define function here */
+#define f(x) 1 / (1 + pow(x, 2))
+
 using namespace std;
-// function that is to be integrated
-float func_inte(float x)
-{
-    return (1 / (1 + x * x));
-}
-// calculating the approximations
-float func_calculate(float lower_limit, float upper_limit, int interval_limit)
-{
-    float value;
-    float interval_size = (upper_limit - lower_limit) / interval_limit;
-    float sum = func_inte(lower_limit) + func_inte(upper_limit);
-    for (int i = 1; i < interval_limit; i++)
-    {
-        if (i % 3 == 0)
-            sum = sum + 2 * func_inte(lower_limit + i * interval_size);
-        else
-            sum = sum + 3 * func_inte(lower_limit + i * interval_size);
-    }
-    return (3 * interval_size / 8) * sum;
-}
 int main()
 {
-    int interval_limit = 8;
-    float lower_limit = 1;
-    float upper_limit = 8;
-    float integral_res = func_calculate(lower_limit,
-                                        upper_limit, interval_limit);
-    cout << integral_res << endl;
+    float lower, upper, integration = 0.0, stepSize, k;
+    int i, subInterval;
+
+    /* Input */
+    cout << "Enter lower limit of integration: ";
+    cin >> lower;
+    cout << "Enter upper limit of integration: ";
+    cin >> upper;
+    cout << "Enter number of sub intervals: ";
+    cin >> subInterval;
+    // intervals should be in the size of multiples of 3
+
+    /* Calculation */
+
+    /* Finding step size */
+    stepSize = (upper - lower) / subInterval;
+
+    /* Finding Integration Value */
+    integration = f(lower) + f(upper);
+    // integration = 3h/8 ((y0 + yn) + 3(y1 + y2 + y4 +...) + 2(y3 + y6 + y9 +......))
+
+    for (i = 1; i <= subInterval - 1; i++)
+    {
+        k = lower + i * stepSize;
+
+        if (i % 3 == 0)
+        {
+            integration = integration + 2 * (f(k));
+        }
+        else
+        {
+            integration = integration + 3 * (f(k));
+        }
+    }
+
+    integration = integration * (3 * stepSize) / 8;
+
+    cout << endl
+         << "Required value of integration is: " << integration;
+
     return 0;
 }
