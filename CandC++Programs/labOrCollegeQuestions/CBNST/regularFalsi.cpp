@@ -11,7 +11,7 @@ void regulaFalsi(double a, double b)
 {
     if (fun(a) * fun(b) >= 0)
     {
-            printf("Wrong Assumption\n");
+        printf("Wrong Assumption\n");
         return;
     }
     double c = a;

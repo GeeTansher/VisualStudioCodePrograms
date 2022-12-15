@@ -2,7 +2,7 @@
 
 using namespace std;
 bool compare(pair<int, int> a, pair<int, int> b){
-    a.second < b.second;
+    return a.second < b.second;
 }
 /*
 In Dynamic Programming first implement problem by recursive approach
