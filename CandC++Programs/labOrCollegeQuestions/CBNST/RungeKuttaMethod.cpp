@@ -25,7 +25,7 @@ int main()
         /* Runge Kutta Method */
         cout << "\nx0\ty0\tyn\n";
         cout << "------------------\n";
-        for (i = 0; i < n; i++)
+        for (i = 0; i < n; i++) // or while(x0 < x)
         {
                 k1 = h * (f(x0, y0));
                 k2 = h * (f((x0 + h / 2), (y0 + k1 / 2)));

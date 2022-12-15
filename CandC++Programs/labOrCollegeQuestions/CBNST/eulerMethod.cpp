@@ -51,6 +51,6 @@ int main()
 
     float h = (x - x0) / n; // take 5 as default step size if not given
 
-    euler(x0, y0, h, x, 5);
+    euler(x0, y0, h, x, h);
     return 0;
 }
