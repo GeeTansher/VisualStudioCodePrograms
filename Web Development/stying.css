@@ -1,0 +1,24 @@
+.p1{
+    text-align: center;
+    border: 5px double;
+    border-color: red;
+    color: aqua;
+    padding-bottom: 1px;
+}
+.p2{
+    border: 5px dotted;
+    border-color: red;
+    color: aqua;
+    width: fit-content;
+    padding: 20px;
+}
+p.p2:hover{
+    color: blue;
+}
+p.p1::first-letter{
+    font-size: xx-large;
+    font-weight: bold;
+}
+span.p1:hover{
+    color: black;
+}

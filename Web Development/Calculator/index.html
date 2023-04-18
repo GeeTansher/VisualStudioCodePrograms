@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+
+    <!-- <div class="extra"> -->
+        <h1>Javascript Calculator</h1>
+    <!-- </div> -->
+
+    <div class="calci">
+        <div id="errorDiv">
+            <span></span>
+        </div>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" value="" id="mainInput">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="numbers">
+                    <input type="button" value="7" class="inputField" onclick="addInExp('7')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="8" class="inputField" onclick="addInExp('8')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="9" class="inputField" onclick="addInExp('9')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="+" class="inputField" onclick="addInExp('+')">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="numbers">
+                    <input type="button" value="4" class="inputField" onclick="addInExp('4')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="5" class="inputField" onclick="addInExp('5')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="6" class="inputField" onclick="addInExp('6')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="-" class="inputField" onclick="addInExp('-')">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="numbers">
+                    <input type="button" value="1" class="inputField" onclick="addInExp('1')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="2" class="inputField" onclick="addInExp('2')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="3" class="inputField" onclick="addInExp('3')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="*" class="inputField" onclick="addInExp('*')">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="numbers">
+                    <input type="button" value="0" class="inputField" onclick="addInExp('0')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="%" class="inputField" onclick="addInExp('%')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="." class="inputField" onclick="addInExp('.')">
+                </td>
+                <td class="numbers">
+                    <input type="button" value="/" class="inputField" onclick="addInExp('/')">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="numbers">
+                    <input type="button" value="=" class="lastInput" onclick="result()">
+                </td>
+                <td colspan="2" class="numbers">
+                    <input type="button" value="C" class="lastInput" onclick="clearExp()">
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+
+    <div class="extra">
+    </div>
+</body>
+
+<script src="index.js"></script>
+</html>

@@ -1,0 +1,110 @@
+<html>
+   <head>
+      <title>Registration form sample</title>
+   </head>
+   <style>
+      *{
+         background-color: aqua;
+         margin: 0;
+         padding: 0;
+      }
+      .text{
+         color: red;
+         margin-left: 20px;
+      }
+      .inputArea{
+         margin-left: 90px;
+         background-color: aliceblue;
+      }
+      .address-box
+      {
+         display: flex;
+         align-items: center;
+         /* justify-content: space-between; */
+         /* width: 350px; */
+      }
+      .checkbox-vertical{
+         display: inline-block;
+         list-style: none;
+         
+      }
+      .langKnown{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         width: 500px
+      }
+      .sex{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         width: 300px
+      }
+   </style>
+   <form>
+      <legend><h2 align="center" class="text">ENTRY FORM</h2></legend>
+      <br><br>
+      <label class="text"><b>Enter you Name:</b></label>
+      <input type="text" value="" class="inputArea"><br><br>
+
+      <label class="text"><b>Enter you Age:</b></label>
+      <input type="text" value="" style="width: 50px;"  class="inputArea"><br><br>
+       
+      <div class="address-box">
+         <label class="text"><b>Enter you Address:</b></label>
+         <textarea cols="15" rows="5" class="inputArea"></textarea>
+      </div><br>
+
+      <div class="sex">
+         <label class="text"><b>Sex:</b></label>
+         <ul class="checkbox-vertical">
+            <li>
+               <input type="radio" value="Male" name="Sex" class="inputArea">Male
+            </li>
+            <li>
+               <input type="radio" value="Female" name="Sex" class="inputArea">Female
+            </li>
+         </ul>
+      </div><br/><br>
+
+      <label class="text"><b>Nationality:</b></label>
+      <select class="inputArea">
+         <option class="inputArea"> (Please Select a country) </option>
+         <option class="inputArea">India</option>
+         <option class="inputArea">Japan</option>
+         <option class="inputArea">Pakistan</option>
+      </select><br><br>
+
+      <div class="langKnown">
+         <label class="text"><b>Languages known:</b></label>
+            <ul class="checkbox-vertical">
+               <li style="color: red; margin-left: 80px;">(can select more than one)</li>
+               <li>
+               <input type="checkbox" value="" class="inputArea">C
+               </li>
+               <li>
+                  <input type="checkbox" value="" class="inputArea">C++
+               </li>
+               <li>
+                  <input type="checkbox" value="" class="inputArea">VB
+               </li>
+               <li>
+                  <input type="checkbox" value="" class="inputArea">Java
+               </li>
+               <li>
+                  <input type="checkbox" value="" class="inputArea">ASP
+               </li>
+               <li>
+                  <input type="checkbox" value="" class="inputArea">OTHERS
+               </li>
+            </ul>̥
+      </div>
+      <br/>
+
+      <label class="text"><b>Enter you Password:</b></label>
+      <input type="password" value="" class="inputArea"><br><br><br>
+
+      <input type="reset" style="margin-left: 300px; background-color: rgb(179, 168, 168);" name="reset" class="inputArea">
+      <input type="submit" name="submit" style="background-color: rgb(179, 168, 168);" class="inputArea"><br>
+   </form>
+</html>
